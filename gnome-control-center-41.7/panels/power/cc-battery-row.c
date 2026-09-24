@@ -264,7 +264,7 @@ cc_battery_row_new (UpDevice *device,
     {
       if (g_object_get_data (G_OBJECT (device), "is-main-battery") != NULL)
         name = C_("Battery name", "Main");
-      else
+      else if (name == NULL || name[0] == '\0')
         name = C_("Battery name", "Extra");
     }
   else if (name == NULL || name[0] == '\0')
